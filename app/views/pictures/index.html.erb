@@ -1,0 +1,34 @@
+<table>
+  <tr>
+    <th><h1>Welcome to Photogur</h1></th>
+  </tr>
+  <tr>
+    <th style="font-size: 22px;"><%= link_to 'New Picture', new_picture_path, class:"btn btn-success btn-lg" %></th>
+  </tr>
+</table>
+
+
+<table class="table table-striped" style="font-size: 22px;">
+ <thead>
+   <tr>
+     <th>Title</th>
+     <th>Picture</th>
+     <th>Options</th>
+     <th colspan="3"></th>
+   </tr>
+ </thead>
+
+ <tbody class="table table-striped" >
+   <% @pictures.each do |picture| %>
+     <tr class="thumbnail thumb-box">
+       <td style="font-size: 20px;"><%= picture.title %></td>
+       <td><%= image_tag picture.url, size: "500x400" %></td>
+       <td><%= link_to 'Show', picture, class:"btn btn-primary btn-lg"%></td>
+       <td><%= link_to 'Edit', edit_picture_path(picture), class:"btn btn-info btn-lg" %></td>
+       <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-lg"  %></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>
+
+<br>

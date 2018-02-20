@@ -1,0 +1,15 @@
+<body class="view">
+  <p id="notice"><%= notice %></p>
+  <p style="font-size: 22px;">
+    <strong>Title:</strong>
+    <%= @picture.title %>
+  </p>
+  <p>
+      <%= image_tag @picture.url  %>
+    </p>
+
+  <%= link_to 'Edit', edit_picture_path(@picture), class:"btn btn-info btn-lg" %> |
+  <%= link_to 'Back', pictures_path, class:"btn btn-primary btn-lg" %> |
+  <%= link_to 'Destroy', picture_path, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning btn-lg" %>
+
+</body>
